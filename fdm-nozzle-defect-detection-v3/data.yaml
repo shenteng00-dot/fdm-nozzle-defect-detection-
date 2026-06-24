@@ -1,0 +1,11 @@
+train: dataset/images/train
+val: dataset/images/val
+test: dataset/images/test
+
+nc: 4
+
+names:
+  0: stringing
+  1: nozzle_blob
+  2: support_failure
+  3: detached
