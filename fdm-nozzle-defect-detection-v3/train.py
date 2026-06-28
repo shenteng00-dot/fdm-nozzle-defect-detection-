@@ -23,7 +23,13 @@ def parse_args():
 
 def main():
     try:
+        from patch_yolov8_focal_loss import patch_ultralytics_focal_loss
+
+        # Patch YOLOv8 classification loss before importing YOLO
+        patch_ultralytics_focal_loss()
+
         from ultralytics import YOLO
+
     except ImportError as exc:
         raise RuntimeError("ultralytics is required. Install it with: pip install ultralytics") from exc
 
